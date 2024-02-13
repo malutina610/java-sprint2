@@ -16,8 +16,10 @@ public class BuhApplication {
                 return;
             } else if (line.equals("1")) {
                 System.out.println("Начинаем считывать все меясчные отчеты");
+                System.out.println("~~~~");
                 service.loadMonthReports();
                 System.out.println("Завершаем считывать все меясчные отчеты");
+                System.out.println("----------------------------------------------------");
             } else if (line.equals("2")) {
                 System.out.println("Начинаем считывать годовой отчет ");
                 //service.loadMonthReports();
@@ -28,8 +30,10 @@ public class BuhApplication {
                 System.out.println("Завершаем сверять отчеты");
             } else if (line.equals("4")) {
                 System.out.println("Начинаем выводить информацию о всех месячных отчетах");
+                System.out.println("----------------------------------------------------");
                 service.printMonthReportInfo();
                 System.out.println("Завершаем выводить информацию о всех месячных отчетах");
+                System.out.println("----------------------------------------------------");
             } else if (line.equals("5")) {
                 System.out.println("Начинаем выводить информацию о годовом отчете");
                 //  service.printMonthReports();

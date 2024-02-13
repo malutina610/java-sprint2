@@ -9,12 +9,12 @@ public class ReportService {
     InMemoryStorage storage = new InMemoryStorage();//Хранилище
 
     public void loadMonthReports() {
-        //здесь дб цикл , month i
-        //int i = 1;// for i 1  - 3,39 min
-        // String path = "./resources/m.20210"+ i +"1.csv";
-
-        ArrayList<Item> items = loadMonthReport("./resources/m.202101.csv");// прочитал файл
-        storage.saveMonthReport(2021, 1, items);// сохранил
+           for (int i = 1; i < 4; i++) {
+            Integer month = i;
+            String path = "./resources/m.20210" + i + ".csv";
+            ArrayList<Item> items = loadMonthReport(path);
+            storage.saveMonthReport(2021, i, items);// сохранил
+        }
     }
     ArrayList<Item> loadMonthReport(String path){
         List<String> lines = readFileContents(path);
@@ -31,19 +31,33 @@ public class ReportService {
     }
 
     public void printMonthReportInfo() {
-        System.out.println(storage.monthReports);
-        int month = 1; // цикл по месяцам
-        System.out.println("Месяц: " + getMonthName(month));
-        Item maxEarning = storage.getMaxEarning(month) ;
-        System.out.println("Максимальный доход. Товар: " + maxEarning.name + " сумма :" + maxEarning.getTotal());
-        Item maxExpense = storage.getMaxExpense(month);
-        System.out.println("Максимальная трата. Товар: " + maxExpense.name + " сумма :" + maxExpense.getTotal());
+        //System.out.println(storage.monthReports); //вывод в строку всех отчетов
+        for (int i = 1; i < 4; i ++) {
+            int month = i; // цикл по месяцам
+            System.out.println("----------------------------------------------------");
+            System.out.println("Отчет за  " + getMonthName(month) + " месяц");
+            Item maxEarning = storage.getMaxEarning(month);
+            System.out.println("Максимально доходный товар (услуга): " + maxEarning.name +
+                    " сумма дохода от продаж: " + maxEarning.getTotal()+" рублей ");
+            Item maxExpense = storage.getMaxExpense(month);
+            System.out.println("Максимальная трата на приобретенный товар : " +
+                    maxExpense.name + " сумма :" + maxExpense.getTotal() + " рулей ");
+            System.out.println("----------------------------------------------------");
+        }
     }
 
     private String getMonthName(int month) {
-        //month = i ;
-        return "Январь";
-    }
+        String naimMonth = "";
+        if (month == 1){
+            naimMonth = "Январь";
+        } else if (month == 2){
+            naimMonth = "Февраль";
+        } else if (month == 3) {
+            naimMonth = "Март";
+        }
+            return naimMonth;
+        }
+   //}
 
     List<String> readFileContents(String path){
         try {

@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="commit1">
-      <change afterPath="$PROJECT_DIR$/src/BuhApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InMemoryStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReportService.java" afterDir="false" />
+    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="commit add all new classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprint2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sprint2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/m.202102.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/m.202102.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/m.202103.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/m.202103.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BuhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuhApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReportService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +35,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/User/IdeaProjects/lesson2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -78,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707678139812</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit add all new classes">
+      <created>1707763331960</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707763331960</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
+    <MESSAGE value="commit add all new classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit add all new classes" />
   </component>
 </project>
