@@ -10,7 +10,7 @@ public class ReportService {
 
     public void loadMonthReports() {
            for (int i = 1; i < 4; i++) {
-            Integer month = i;
+          //  Integer month = i;
             String path = "./resources/m.20210" + i + ".csv";
             ArrayList<Item> items = loadMonthReport(path);
             storage.saveMonthReport(2021, i, items);// сохранил
@@ -45,19 +45,50 @@ public class ReportService {
             System.out.println("----------------------------------------------------");
         }
     }
-
     private String getMonthName(int month) {
         String naimMonth = "";
         if (month == 1){
-            naimMonth = "Январь";
+            naimMonth = "январь";
         } else if (month == 2){
-            naimMonth = "Февраль";
+            naimMonth = "февраль";
         } else if (month == 3) {
-            naimMonth = "Март";
+            naimMonth = "март";
+        } else if (month == 4) {
+            naimMonth = "апрель ";
+        } else if (month == 5) {
+            naimMonth = "май ";
+        } else if (month == 6){
+            naimMonth = "июнь";
+        } else if (month == 7){
+            naimMonth = "июль";
+        } else if (month == 8){
+            naimMonth = "август";
+        } else if (month == 9){
+            naimMonth = "сентябрь";
+        } else if (month == 10){
+            naimMonth = "октябрь";
+        } else if (month == 11) {
+            naimMonth = "ноябрь";
+        } else if (month == 12) {
+            naimMonth = "декабрь";
         }
-            return naimMonth;
+        return naimMonth;
         }
-   //}
+    public void loadYearReports() {
+        String path = "./resources/y.2021.csv";
+        List<String> lines = readFileContents(path);
+        ArrayList<MonthYear> monthYears = new ArrayList<>();
+        for (int i = 1; i < lines.size(); i++){
+            int month = i;
+            String line = lines.get(i);//01,1593150,false
+            String[] rows = line.split(",");
+            MonthYear monthYear = new MonthYear( Integer.parseInt(rows[0]),
+                    Long.parseLong(rows[1]),
+                    Boolean.parseBoolean(rows[2]));
+            monthYears.add(monthYear);
+            storage.saveYearReport(2021, monthYears);// сохранил
+        }
+    }
 
     List<String> readFileContents(String path){
         try {
@@ -66,5 +97,34 @@ public class ReportService {
             System.out.println("Невозможно прочитать файл с месячнымотчетом. Возможно файл не находится в папке");
             return Collections.emptyList();
         }
+   }
+
+    public void printYearReports() {
+        int year = 2021;
+            System.out.println("----------------------------------------------------");
+            System.out.println("             Отчет за " + year + " год");
+            System.out.println("----------------------------------------------------");
+            MonthYear maxMontYear = storage.getMaxMontYear(year);
+            System.out.println("Максимальный доход, был  в "+ getMonthName(maxMontYear.month ) +
+                    " месяце " + "  он состовил: - " + maxMontYear.amount + " рублей; ");
+        System.out.println("--------");
+        Integer averageExpenseAllMonthYear = storage.getAverageExpenseAllMonthYear(year);
+            System.out.println("Средний расход за все месяцы, " + year + " года, составил:  " + averageExpenseAllMonthYear +
+                    " рублей;");
+        System.out.println("--------");
+        Integer averageProfitAllMonthYear = storage.getAverageProfitAllMonthYear(year);
+            System.out.println("Средняя прибыль за все месяцы," + year + " года составила:  " +
+                    averageProfitAllMonthYear + " рублей;");
+        System.out.println("--------");
+        for(int i =1; i < 13; i++) {
+               Integer month = i;
+               System.out.println("Доход за " + getMonthName(month) +  " месяц: ");
+               System.out.println(storage.yearReports); //вывод в строку всех отчетов
+               System.out.println("Расход за " + getMonthName(month) +  " месяц: ");
+               System.out.println(storage.yearReports); //вывод в строку всех отчетов
+               System.out.println("--------");
+
+        }
+
     }
 }

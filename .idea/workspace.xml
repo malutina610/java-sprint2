@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="commit add all new classes">
+    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="finished with monthly reports">
+      <change afterPath="$PROJECT_DIR$/src/MonthYear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/m.202102.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/m.202102.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/m.202103.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/m.202103.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BuhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuhApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InMemoryStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InMemoryStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReportService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/User/IdeaProjects/lesson2"
+    "last_opened_file_path": "C:/Users/User/IdeaProjects/Readoffile"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -84,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707763331960</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finished with monthly reports">
+      <created>1707851149259</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707851149259</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +108,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit1" />
     <MESSAGE value="commit add all new classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit add all new classes" />
+    <MESSAGE value="finished with monthly reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished with monthly reports" />
   </component>
 </project>
