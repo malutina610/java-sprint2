@@ -34,7 +34,7 @@ public class ReportService {
         //System.out.println(storage.monthReports); //вывод в строку всех отчетов
         for (int i = 1; i < 4; i ++) {
             int month = i; // цикл по месяцам
-            System.out.println("----------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------");
             System.out.println("Отчет за  " + getMonthName(month) + " месяц");
             Item maxEarning = storage.getMaxEarning(month);
             System.out.println("Максимально доходный товар (услуга): " + maxEarning.name +
@@ -42,7 +42,7 @@ public class ReportService {
             Item maxExpense = storage.getMaxExpense(month);
             System.out.println("Максимальная трата на приобретенный товар : " +
                     maxExpense.name + " сумма :" + maxExpense.getTotal() + " рулей ");
-            System.out.println("----------------------------------------------------");
+
         }
     }
     private String getMonthName(int month) {
@@ -79,7 +79,7 @@ public class ReportService {
         List<String> lines = readFileContents(path);
         ArrayList<MonthYear> monthYears = new ArrayList<>();
         for (int i = 1; i < lines.size(); i++){
-            int month = i;
+           // int month = i;
             String line = lines.get(i);//01,1593150,false
             String[] rows = line.split(",");
             MonthYear monthYear = new MonthYear( Integer.parseInt(rows[0]),
@@ -101,28 +101,33 @@ public class ReportService {
 
     public void printYearReports() {
         int year = 2021;
-            System.out.println("----------------------------------------------------");
-            System.out.println("             Отчет за " + year + " год");
-            System.out.println("----------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println("                       Отчет за " + year + " год"                          );
+            System.out.println("--------------------------------------------------------------------------");
             MonthYear maxMontYear = storage.getMaxMontYear(year);
             System.out.println("Максимальный доход, был  в "+ getMonthName(maxMontYear.month ) +
                     " месяце " + "  он состовил: - " + maxMontYear.amount + " рублей; ");
-        System.out.println("--------");
-        Integer averageExpenseAllMonthYear = storage.getAverageExpenseAllMonthYear(year);
+            System.out.println("-");
+            Integer averageExpenseAllMonthYear = storage.getAverageExpenseAllMonthYear(year);
             System.out.println("Средний расход за все месяцы, " + year + " года, составил:  " + averageExpenseAllMonthYear +
                     " рублей;");
-        System.out.println("--------");
-        Integer averageProfitAllMonthYear = storage.getAverageProfitAllMonthYear(year);
+            System.out.println("-");
+            Integer averageProfitAllMonthYear = storage.getAverageProfitAllMonthYear(year);
             System.out.println("Средняя прибыль за все месяцы," + year + " года составила:  " +
-                    averageProfitAllMonthYear + " рублей;");
-        System.out.println("--------");
-        for(int i =1; i < 13; i++) {
+                     averageProfitAllMonthYear + " рублей;");
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println("                        Верстка годового отчета                           ");
+            System.out.println("--------------------------------------------------------------------------");
+            for(int i =1; i < 13; i++) {
                Integer month = i;
-               System.out.println("Доход за " + getMonthName(month) +  " месяц: ");
-               System.out.println(storage.yearReports); //вывод в строку всех отчетов
-               System.out.println("Расход за " + getMonthName(month) +  " месяц: ");
-               System.out.println(storage.yearReports); //вывод в строку всех отчетов
-               System.out.println("--------");
+               Integer profitAllMonthYear = storage.getProfitAllMonthYear(i, year);
+               System.out.println("Доход за " + getMonthName(month) +  " месяц : " +
+                       profitAllMonthYear + " рублей ");
+               System.out.println("-");
+               Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, year);
+               System.out.println("Расход за " + getMonthName(month) +  " месяц: " +
+                       expenseAllMonthYear + " рублей");
+               System.out.println("--------------------------------------------------------------------------");
 
         }
 

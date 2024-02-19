@@ -93,4 +93,34 @@ public class InMemoryStorage {
         }
         return averagesum;
     }
+
+    public Integer getProfitAllMonthYear(int i, int year) {
+        ArrayList<MonthYear> monthYears = yearReports.get(year);
+        Integer profit = 0;
+        for (MonthYear monthYear : monthYears) {
+            if(monthYear.month!=i){
+                continue;
+            }
+            if(monthYear.expense){
+                continue;
+            }
+            profit = Math.toIntExact(monthYear.amount);
+        }
+        return profit;
+    }
+
+    public Integer getExpenseAllMonthYear(int i, int year) {
+        ArrayList<MonthYear> monthYears = yearReports.get(year);
+        Integer expense = 0;
+        for (MonthYear monthYear : monthYears){
+            if(monthYear.month!=i){
+                continue;
+            }
+            if (!monthYear.expense){
+                continue;
+            }
+            expense = Math.toIntExact(monthYear.amount);
+        }
+        return expense;
+    }
 }

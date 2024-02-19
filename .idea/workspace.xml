@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="finished with monthly reports">
-      <change afterPath="$PROJECT_DIR$/src/MonthYear.java" afterDir="false" />
+    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="The end of write years reports 19.02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BuhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuhApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InMemoryStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InMemoryStorage.java" afterDir="false" />
@@ -91,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1707851149259</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="write years reports 18.02">
+      <created>1708269603488</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708269603488</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +115,8 @@
     <MESSAGE value="commit1" />
     <MESSAGE value="commit add all new classes" />
     <MESSAGE value="finished with monthly reports" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished with monthly reports" />
+    <MESSAGE value="write years reports 18.02" />
+    <MESSAGE value="The end of write years reports 19.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="The end of write years reports 19.02" />
   </component>
 </project>
