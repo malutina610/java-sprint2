@@ -10,7 +10,6 @@ public class ReportService {
 
     public void loadMonthReports() {
            for (int i = 1; i < 4; i++) {
-          //  Integer month = i;
             String path = "./resources/m.20210" + i + ".csv";
             ArrayList<Item> items = loadMonthReport(path);
             storage.saveMonthReport(2021, i, items);// сохранил
@@ -31,7 +30,6 @@ public class ReportService {
     }
 
     public void printMonthReportInfo() {
-        //System.out.println(storage.monthReports); //вывод в строку всех отчетов
         for (int i = 1; i < 4; i ++) {
             int month = i; // цикл по месяцам
             System.out.println("--------------------------------------------------------------------------");
@@ -42,7 +40,6 @@ public class ReportService {
             Item maxExpense = storage.getMaxExpense(month);
             System.out.println("Максимальная трата на приобретенный товар : " +
                     maxExpense.name + " сумма :" + maxExpense.getTotal() + " рулей ");
-
         }
     }
     private String getMonthName(int month) {
@@ -79,7 +76,6 @@ public class ReportService {
         List<String> lines = readFileContents(path);
         ArrayList<MonthYear> monthYears = new ArrayList<>();
         for (int i = 1; i < lines.size(); i++){
-           // int month = i;
             String line = lines.get(i);//01,1593150,false
             String[] rows = line.split(",");
             MonthYear monthYear = new MonthYear( Integer.parseInt(rows[0]),
@@ -98,7 +94,6 @@ public class ReportService {
             return Collections.emptyList();
         }
    }
-
     public void printYearReports() {
         int year = 2021;
             System.out.println("--------------------------------------------------------------------------");
@@ -128,8 +123,6 @@ public class ReportService {
                System.out.println("Расход за " + getMonthName(month) +  " месяц: " +
                        expenseAllMonthYear + " рублей");
                System.out.println("--------------------------------------------------------------------------");
-
         }
-
     }
 }

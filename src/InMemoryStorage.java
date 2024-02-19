@@ -5,7 +5,6 @@ public class InMemoryStorage {
     LinkedHashMap<Integer, ArrayList<Item>> monthReports = new LinkedHashMap<>();
     LinkedHashMap<Integer, ArrayList<MonthYear>> yearReports = new LinkedHashMap<>();
 
-
     public void saveMonthReport(int year, int month, ArrayList<Item> items) {
         monthReports.put(month, items);
     }
@@ -76,7 +75,6 @@ public class InMemoryStorage {
         }
         return average;
     }
-
 
     public Integer getAverageProfitAllMonthYear(int year) {
         ArrayList<MonthYear> monthYears = yearReports.get(year);
