@@ -30,7 +30,7 @@ public class BuhApplication {
                 System.out.println("--------------------------------------------------------------------------");
             } else if (line.equals("3")) {
                 System.out.println("Начинаем сверять отчеты ");
-                //service.loadMonthReports();
+                service.checkMonthYearReports();
                 System.out.println("Завершаем сверять отчеты");
             } else if (line.equals("4")) {
                 System.out.println("--------------------------------------------------------------------------");

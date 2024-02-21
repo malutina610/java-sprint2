@@ -5,12 +5,13 @@ public class InMemoryStorage {
     LinkedHashMap<Integer, ArrayList<Item>> monthReports = new LinkedHashMap<>();
     LinkedHashMap<Integer, ArrayList<MonthYear>> yearReports = new LinkedHashMap<>();
 
+    LinkedHashMap<Integer, ArrayList<Item>> mapaSummMonthReports = new LinkedHashMap<>();
     public void saveMonthReport(int year, int month, ArrayList<Item> items) {
         monthReports.put(month, items);
     }
 
     public Item getMaxEarning(int month) {
-        ArrayList<Item> items = monthReports.get(month);
+        ArrayList<Item> items = monthReports.get(month);// делаю массив по месяцу
         Item max = null;
         long total = 0;
         for (Item item : items) {
@@ -39,6 +40,34 @@ public class InMemoryStorage {
             }
         }
         return max;
+    }
+
+    public int getSumMontExpense (int month) {
+        ArrayList<Item> items = monthReports.get(month);
+        Integer suma = 0;
+        long total = 0;
+        for (Item item : items) {
+            if (item.expense){
+                continue;
+            }
+            total = item.getTotal();
+            suma = Math.toIntExact(suma + total);
+        }
+        return suma;
+    }
+
+    public int getSumMontExpenseFalse (int month) {
+        ArrayList<Item> items = monthReports.get(month);
+        Integer suma = 0;
+        long total = 0;
+        for (Item item : items) {
+            if (!item.expense){
+                continue;
+            }
+            total = item.getTotal();
+            suma = Math.toIntExact(suma + total);
+        }
+        return suma;
     }
 
     public void saveYearReport(int year, ArrayList<MonthYear> monthYears ) {
