@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="write checker years month reports 21.02">
+    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="The end 1 25.02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BuhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuhApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InMemoryStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InMemoryStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReconciliationReports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReconciliationReports.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReportService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708543129309</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="The end 1 25.02">
+      <option name="closed" value="true" />
+      <created>1708863124624</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708863124624</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +145,7 @@
     <MESSAGE value="write years reports 18.02" />
     <MESSAGE value="The end of write years reports 19.02" />
     <MESSAGE value="write checker years month reports 21.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="write checker years month reports 21.02" />
+    <MESSAGE value="The end 1 25.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="The end 1 25.02" />
   </component>
 </project>

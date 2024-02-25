@@ -22,6 +22,8 @@ public class BuhApplication {
                 System.out.println("Месячные отчеты успешно считаны");
                 System.out.println("--------------------------------------------------------------------------");
             } else if (line.equals("2")) {
+                System.out.println("Введите год");
+                System.out.println();
                 System.out.println("--------------------------------------------------------------------------");
                 System.out.println("Начинаем считывать годовой отчет ");
                 System.out.println("~ ~ ~ ~");

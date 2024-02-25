@@ -17,17 +17,19 @@ public class InMemoryStorage {
         ArrayList<Item> items = monthReports.get(month);// делаю массив по месяцу??????? КАК?????
         Item max = null;
         long total = 0;
-        for (Item item : items) {
-            if (item.expense){
-                continue;
-            }
-            if (item.getTotal() > total){
-                total = item.getTotal();
-                max = item;
-            }
-        }
-        return max;
-    }
+        if (!monthReports.isEmpty()) {
+          for (Item item : items) {
+              if (item.expense) {
+                  continue;
+              }
+              if (item.getTotal() > total) {
+                  total = item.getTotal();
+                  max = item;
+              }
+          }
+      }
+          return max;
+      }
 
     public Item getMaxExpense(int month) {
         ArrayList<Item> items = monthReports.get(month);
