@@ -1,17 +1,20 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class InMemoryStorage {
     LinkedHashMap<Integer, ArrayList<Item>> monthReports = new LinkedHashMap<>();
     LinkedHashMap<Integer, ArrayList<MonthYear>> yearReports = new LinkedHashMap<>();
 
-    LinkedHashMap<Integer, ArrayList<Item>> mapaSummMonthReports = new LinkedHashMap<>();
+    //LinkedHashMap<Integer, Integer> mapaMonthToCount = new LinkedHashMap<>();
+//    LinkedHashMap<Integer, Integer> mapaMonthToCountExpence = new LinkedHashMap<>();
+
     public void saveMonthReport(int year, int month, ArrayList<Item> items) {
         monthReports.put(month, items);
     }
 
     public Item getMaxEarning(int month) {
-        ArrayList<Item> items = monthReports.get(month);// делаю массив по месяцу
+        ArrayList<Item> items = monthReports.get(month);// делаю массив по месяцу??????? КАК?????
         Item max = null;
         long total = 0;
         for (Item item : items) {
@@ -41,7 +44,7 @@ public class InMemoryStorage {
         }
         return max;
     }
-
+////////////////////////////////////////////////////////////////////////////////////////
     public int getSumMontExpense (int month) {
         ArrayList<Item> items = monthReports.get(month);
         Integer suma = 0;
@@ -52,6 +55,7 @@ public class InMemoryStorage {
             }
             total = item.getTotal();
             suma = Math.toIntExact(suma + total);
+            //mapaMonthToCount.put(month, suma);
         }
         return suma;
     }
@@ -66,10 +70,11 @@ public class InMemoryStorage {
             }
             total = item.getTotal();
             suma = Math.toIntExact(suma + total);
+           // mapaMonthToCountExpence.put(month, suma);
         }
         return suma;
     }
-
+///////////////////////////////////////////////////////////////////////////////
     public void saveYearReport(int year, ArrayList<MonthYear> monthYears ) {
         yearReports.put(year, monthYears);
     }

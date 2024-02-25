@@ -120,29 +120,55 @@ public class ReportService {
         for (int i = 1; i < 13; i++) {
             Integer month = i;
             Integer profitAllMonthYear = storage.getProfitAllMonthYear(i, year);
-            System.out.println("Доход за " + getMonthName(month) + " месяц : " +
-                    profitAllMonthYear + " рублей ");
-            System.out.println("-");
+            if(profitAllMonthYear != 0){
+                System.out.println("Доход за " + getMonthName(month) + " месяц : " +
+                        profitAllMonthYear + " рублей ");
+                System.out.println("-");
+            }
             Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, year);
-            System.out.println("Расход за " + getMonthName(month) + " месяц: " +
-                    expenseAllMonthYear + " рублей");
-            System.out.println("--------------------------------------------------------------------------");
+            if(expenseAllMonthYear != 0){
+                System.out.println("Расход за " + getMonthName(month) + " месяц: " +
+                        expenseAllMonthYear + " рублей");
+                System.out.println("--------------------------------------------------------------------------");
+            }
         }
     }
 
     public void checkMonthYearReports() {
-        System.out.println("--------------------------------------------------------------------------");
         Integer year = 2021;
-        for (int i = 1; i < 13; i++) {
+        Integer flag = 0;
+        for (int i = 1; i < 4; i++) {
             int month = i;
+            Integer amountMonthYear = storage.getProfitAllMonthYear(i, year);
             int sumMontExpense = storage.getSumMontExpense(month);
-            System.out.println("Доход за " + getMonthName(month) + " месяц : " +
-                    sumMontExpense + " рублей ");
-            System.out.println("-");
+            if(amountMonthYear != sumMontExpense){
+                flag ++;
+                if(flag == 1){
+                    System.out.println("--------------------------------------------------------------------------");
+                    System.out.println("----------------   Протокол несоответствия отчетов     -------------------");
+                    System.out.println("--------------------------------------------------------------------------");
+                }
+                System.out.println("В месячном отчете доход за " + getMonthName(month) + " месяц : " +
+                        sumMontExpense + " рублей ");
+                System.out.println("В годовом отчете доход за " + getMonthName(month) + " месяц : " +
+                        amountMonthYear + " рублей ");
+                System.out.println("-");
+            }
             int sumMontExpenseFalse = storage.getSumMontExpenseFalse(month);
-            System.out.println("Расход за " + getMonthName(month) + " месяц : " +
-                    sumMontExpenseFalse + " рублей ");
-            System.out.println("-");
+            Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, year);
+            if(sumMontExpenseFalse != expenseAllMonthYear ){
+                flag ++;
+                if(flag == 1){
+                    System.out.println("--------------------------------------------------------------------------");
+                    System.out.println("----------------   Протокол несоответствия отчетов     -------------------");
+                    System.out.println("--------------------------------------------------------------------------");
+                }
+                System.out.println("В месячном отчете расход за " + getMonthName(month) + " месяц : " +
+                        sumMontExpenseFalse + " рублей ");
+                System.out.println("В годовом отчете расход за " + getMonthName(month) + " месяц : " +
+                        expenseAllMonthYear + " рублей ");
+                System.out.println("-");
+            }
         }
     }
 }
