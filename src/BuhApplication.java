@@ -8,8 +8,11 @@ public class BuhApplication {
         scanner = new Scanner(System.in);
         service = new ReportService();
         String line = "";
+        String year ="";
+
 
         while (!line.equals("6")){
+            boolean read = true;
             printMenu();
             line = scanner.nextLine();
             if (line.isEmpty()){
@@ -22,15 +25,28 @@ public class BuhApplication {
                 System.out.println("Месячные отчеты успешно считаны");
                 System.out.println("--------------------------------------------------------------------------");
             } else if (line.equals("2")) {
-                System.out.println("Введите год");
-                System.out.println();
-                System.out.println("--------------------------------------------------------------------------");
-                System.out.println("Начинаем считывать годовой отчет ");
-                System.out.println("~ ~ ~ ~");
-                service.loadYearReports();
-                System.out.println("Годовой отчнт успешно считан");
-                System.out.println("--------------------------------------------------------------------------");
-                System.out.println();
+                System.out.println("Укажите за какой год необходимо считать отчет");
+                line = scanner.nextLine();
+                if (line.equals("2021")) {
+                    year = "2021";
+                } else if (line.equals("2022")) {
+                    year = "2022";
+                } else{
+                    System.out.println("--------------------------------------------------------------------------");
+                    System.out.println("Для " + line + " года отчет не найден");
+                    System.out.println("--------------------------------------------------------------------------");
+                    read = false;
+                }
+                if (read == true) {
+                    System.out.println();
+                    System.out.println("--------------------------------------------------------------------------");
+                    System.out.println("Начинаем считывать годовой отчет ");
+                    System.out.println("~ ~ ~ ~");
+                    service.loadYearReports(year);
+                    System.out.println("Отчет за " + year + "год успешно считан");
+                    System.out.println("--------------------------------------------------------------------------");
+                    System.out.println();
+                }
             } else if (line.equals("3")) {
                 System.out.println("--------------------------------------------------------------------------");
                 System.out.println("Начинаем сверять отчеты ");

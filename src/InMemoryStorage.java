@@ -1,20 +1,32 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class InMemoryStorage {
     LinkedHashMap<Integer, ArrayList<Item>> monthReports = new LinkedHashMap<>();
     LinkedHashMap<Integer, ArrayList<MonthYear>> yearReports = new LinkedHashMap<>();
 
-    //LinkedHashMap<Integer, Integer> mapaMonthToCount = new LinkedHashMap<>();
-//    LinkedHashMap<Integer, Integer> mapaMonthToCountExpence = new LinkedHashMap<>();
+    public boolean isStorageMonthFull () {
+        boolean storageMonthFull = false;
+        if (!monthReports.isEmpty()) {
+            storageMonthFull = true;
+        }
+        return storageMonthFull;
+    }
+    public boolean isStorageYearFull () {
+        boolean storageYearFull = false;
+        if (!yearReports.isEmpty()) {
+            storageYearFull = true;
+        }
+        return storageYearFull;
+    }
 
     public void saveMonthReport(int year, int month, ArrayList<Item> items) {
         monthReports.put(month, items);
+        isStorageMonthFull();
     }
 
     public Item getMaxEarning(int month) {
-        ArrayList<Item> items = monthReports.get(month);// делаю массив по месяцу??????? КАК?????
+        ArrayList<Item> items = monthReports.get(month);
         Item max = null;
         long total = 0;
         if (!monthReports.isEmpty()) {
@@ -77,8 +89,9 @@ public class InMemoryStorage {
         return suma;
     }
 ///////////////////////////////////////////////////////////////////////////////
-    public void saveYearReport(int year, ArrayList<MonthYear> monthYears ) {
-        yearReports.put(year, monthYears);
+    public void saveYearReport(String year, ArrayList<MonthYear> monthYears ) {
+        yearReports.put(Integer.valueOf(year), monthYears);
+        isStorageYearFull();
     }
     public MonthYear getMaxMontYear(int year) {
         ArrayList<MonthYear> monthYears = yearReports.get(year);

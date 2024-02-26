@@ -18,7 +18,7 @@ public class ReportService {
         try {
             return Files.readAllLines(Path.of(path));
         } catch (IOException e) {
-            System.out.println("Невозможно прочитать файл с месячным отчетом. Возможно файл не находится в папке");
+            System.out.println("Не возможно считать файл с отчетом, возможно файл не находится в папке");
             return Collections.emptyList();
         }
     }
@@ -58,8 +58,8 @@ public class ReportService {
         }
     }
 
-    public void loadYearReports() {
-        String path = "./resources/y.2021.csv";
+    public void loadYearReports(String year) {
+        String path = "./resources/y." + year + ".csv";
         List<String> lines = readFileContents(path);
         ArrayList<MonthYear> monthYears = new ArrayList<>();
         for (int i = 1; i < lines.size(); i++) {
@@ -69,7 +69,7 @@ public class ReportService {
                     Long.parseLong(rows[1]),
                     Boolean.parseBoolean(rows[2]));
             monthYears.add(monthYear);
-            storage.saveYearReport(2021, monthYears);// сохранил
+            storage.saveYearReport( year, monthYears);// сохранил
         }
     }
 
