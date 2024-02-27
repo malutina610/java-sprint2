@@ -6,23 +6,14 @@ public class InMemoryStorage {
     LinkedHashMap<Integer, ArrayList<MonthYear>> yearReports = new LinkedHashMap<>();
 
     public boolean isStorageMonthFull () {
-        boolean storageMonthFull = false;
-        if (!monthReports.isEmpty()) {
-            storageMonthFull = true;
-        }
-        return storageMonthFull;
+        return !monthReports.isEmpty();
     }
     public boolean isStorageYearFull () {
-        boolean storageYearFull = false;
-        if (!yearReports.isEmpty()) {
-            storageYearFull = true;
-        }
-        return storageYearFull;
+        return !yearReports.isEmpty();
     }
 
-    public void saveMonthReport(int year, int month, ArrayList<Item> items) {
+    public void saveMonthReport(int month, ArrayList<Item> items) {
         monthReports.put(month, items);
-        isStorageMonthFull();
     }
 
     public Item getMaxEarning(int month) {
@@ -91,7 +82,6 @@ public class InMemoryStorage {
 ///////////////////////////////////////////////////////////////////////////////
     public void saveYearReport(String year, ArrayList<MonthYear> monthYears ) {
         yearReports.put(Integer.valueOf(year), monthYears);
-        isStorageYearFull();
     }
     public MonthYear getMaxMontYear(int year) {
         ArrayList<MonthYear> monthYears = yearReports.get(year);

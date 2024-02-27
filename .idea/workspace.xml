@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708863124624</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="The end of write years reports 19.02.02">
+      <created>1708951783969</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708951783969</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +153,7 @@
     <MESSAGE value="The end of write years reports 19.02" />
     <MESSAGE value="write checker years month reports 21.02" />
     <MESSAGE value="The end 1 25.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="The end 1 25.02" />
+    <MESSAGE value="The end of write years reports 19.02.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="The end of write years reports 19.02.02" />
   </component>
 </project>

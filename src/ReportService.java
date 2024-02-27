@@ -22,11 +22,11 @@ public class ReportService {
             return Collections.emptyList();
         }
     }
-    public void loadMonthReports() {
+    public void loadMonthReports(String year) {
         for (int i = 1; i < 4; i++) {
-            String path = "./resources/m.20210" + i + ".csv";
+            String path = "./resources/m." + year + "0" + i + ".csv";
             ArrayList<Item> items = loadMonthReport(path);
-            storage.saveMonthReport(2021, i, items);// сохранил
+            storage.saveMonthReport(i, items);// сохранил
         }
     }
 
@@ -46,7 +46,7 @@ public class ReportService {
 
     public void printMonthReportInfo() {
         for (int i = 1; i < 4; i++) {
-            int month = i; // цикл по месяцам
+            int month = i;
             System.out.println("--------------------------------------------------------------------------");
             System.out.println("Отчет за  " + getMonthName(month - 1) + " месяц");
             Item maxEarning = storage.getMaxEarning(month);
@@ -73,20 +73,19 @@ public class ReportService {
         }
     }
 
-    public void printYearReports() {
-        int year = 2021;
+    public void printYearReports(String year) {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("                       Отчет за " + year + " год");
         System.out.println("--------------------------------------------------------------------------");
-        MonthYear maxMontYear = storage.getMaxMontYear(year);
+        MonthYear maxMontYear = storage.getMaxMontYear(Integer.parseInt(year));
         System.out.println("Максимальный доход, был  в " + getMonthName(maxMontYear.month - 1) +
                 " месяце " + "  он состовил: - " + maxMontYear.amount + " рублей; ");
         System.out.println("-");
-        Integer averageExpenseAllMonthYear = storage.getAverageExpenseAllMonthYear(year);
+        Integer averageExpenseAllMonthYear = storage.getAverageExpenseAllMonthYear(Integer.parseInt(year));
         System.out.println("Средний расход за все месяцы, " + year + " года, составил:  " + averageExpenseAllMonthYear +
                 " рублей;");
         System.out.println("-");
-        Integer averageProfitAllMonthYear = storage.getAverageProfitAllMonthYear(year);
+        Integer averageProfitAllMonthYear = storage.getAverageProfitAllMonthYear(Integer.parseInt(year));
         System.out.println("Средняя прибыль за все месяцы," + year + " года составила:  " +
                 averageProfitAllMonthYear + " рублей;");
         System.out.println("--------------------------------------------------------------------------");
@@ -94,13 +93,13 @@ public class ReportService {
         System.out.println("--------------------------------------------------------------------------");
         for (int i = 1; i < 13; i++) {
             Integer month = i;
-            Integer profitAllMonthYear = storage.getProfitAllMonthYear(i, year);
+            Integer profitAllMonthYear = storage.getProfitAllMonthYear(i, Integer.parseInt(year));
             if(profitAllMonthYear != 0){
                 System.out.println("Доход за " + getMonthName(month - 1) + " месяц : " +
                         profitAllMonthYear + " рублей ");
                 System.out.println("-");
             }
-            Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, year);
+            Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, Integer.parseInt(year));
             if(expenseAllMonthYear != 0){
                 System.out.println("Расход за " + getMonthName(month - 1) + " месяц: " +
                         expenseAllMonthYear + " рублей");
