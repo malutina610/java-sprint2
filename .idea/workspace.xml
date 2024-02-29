@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="The end of write years reports 19.02.02">
+    <list default="true" id="2e559c15-1092-420b-9bb5-311dea67d844" name="Changes" comment="Replace all year 27.02.02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/y.2021.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/y.2021.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BuhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuhApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InMemoryStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InMemoryStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReportService.java" afterDir="false" />
@@ -131,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708951783969</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Replace all year 27.02.02">
+      <created>1709025690457</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709025690457</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +162,7 @@
     <MESSAGE value="write checker years month reports 21.02" />
     <MESSAGE value="The end 1 25.02" />
     <MESSAGE value="The end of write years reports 19.02.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="The end of write years reports 19.02.02" />
+    <MESSAGE value="Replace all year 27.02.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace all year 27.02.02" />
   </component>
 </project>

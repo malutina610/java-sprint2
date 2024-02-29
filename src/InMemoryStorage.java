@@ -49,7 +49,7 @@ public class InMemoryStorage {
         }
         return max;
     }
-////////////////////////////////////////////////////////////////////////////////////////
+
     public int getSumMontExpense (int month) {
         ArrayList<Item> items = monthReports.get(month);
         Integer suma = 0;
@@ -60,7 +60,6 @@ public class InMemoryStorage {
             }
             total = item.getTotal();
             suma = Math.toIntExact(suma + total);
-            //mapaMonthToCount.put(month, suma);
         }
         return suma;
     }
@@ -75,11 +74,10 @@ public class InMemoryStorage {
             }
             total = item.getTotal();
             suma = Math.toIntExact(suma + total);
-           // mapaMonthToCountExpence.put(month, suma);
         }
         return suma;
     }
-///////////////////////////////////////////////////////////////////////////////
+
     public void saveYearReport(String year, ArrayList<MonthYear> monthYears ) {
         yearReports.put(Integer.valueOf(year), monthYears);
     }

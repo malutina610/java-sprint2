@@ -3,12 +3,10 @@ import java.util.Scanner;
 public class BuhApplication {
     private Scanner scanner;
     private ReportService service;
-  // private  InMemoryStorage storage;
 
     public void run(){
         scanner = new Scanner(System.in);
         service = new ReportService();
-     //   storage = new InMemoryStorage();
         String line = "";
         String year ="";
 
@@ -63,17 +61,29 @@ public class BuhApplication {
                     System.out.println();
                 }
             } else if (line.equals("3")) {
+                boolean full = service.storage.isStorageYearFull();
                 System.out.println("--------------------------------------------------------------------------");
-                System.out.println("Начинаем сверять отчеты за " + year + " год");
-                service.checkMonthYearReports();
-                System.out.println("--------------------------------------------------------------------------");
-                System.out.println("Сверка отчетов успешно завершена");
-                System.out.println("--------------------------------------------------------------------------");
-                System.out.println();
+                if (full) {
+                    full = service.storage.isStorageMonthFull();
+                    if (full) {
+                        System.out.println("Начинаем сверять отчеты за " + year + " год");
+                        service.checkMonthYearReports(year);
+                        System.out.println("--------------------------------------------------------------------------");
+                        System.out.println("Сверка отчетов успешно завершена");
+                        System.out.println("--------------------------------------------------------------------------");
+                        System.out.println();
+                    }else {
+                        System.out.println("Месячный отчет не считан, вывод информации не возможен");
+                        System.out.println("--------------------------------------------------------------------------");
+                    }
+                }else{
+                    System.out.println("Годовой отчет не считан, вывод информации не возможен");
+                    System.out.println("--------------------------------------------------------------------------");
+                }
             } else if (line.equals("4")) {
                 boolean full = service.storage.isStorageMonthFull();
+                System.out.println("--------------------------------------------------------------------------");
                 if (full) {
-                    System.out.println("--------------------------------------------------------------------------");
                     System.out.println("Начинаем выводить информацию о всех месячных отчетах " + year + " года");
                     System.out.println("--------------------------------------------------------------------------");
                     service.printMonthReportInfo();
@@ -82,7 +92,6 @@ public class BuhApplication {
                     System.out.println("--------------------------------------------------------------------------");
                     System.out.println();
                 }else{
-                    System.out.println("--------------------------------------------------------------------------");
                     System.out.println("Месячные отчеты не считаны, вывод информации не возможен");
                     System.out.println("--------------------------------------------------------------------------");
                 }

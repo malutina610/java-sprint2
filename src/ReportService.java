@@ -108,12 +108,12 @@ public class ReportService {
         }
     }
 
-    public void checkMonthYearReports() {
-        Integer year = 2021;
+    public void checkMonthYearReports(String year) {
+     //   Integer year = 2021;
         Integer flag = 0;
         for (int i = 1; i < 4; i++) {
             int month = i;
-            Integer amountMonthYear = storage.getProfitAllMonthYear(i, year);
+            Integer amountMonthYear = storage.getProfitAllMonthYear(i, Integer.parseInt(year));
             int sumMontExpense = storage.getSumMontExpense(month);
             if(amountMonthYear != sumMontExpense){
                 flag ++;
@@ -129,7 +129,7 @@ public class ReportService {
                 System.out.println("-");
             }
             int sumMontExpenseFalse = storage.getSumMontExpenseFalse(month);
-            Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, year);
+            Integer expenseAllMonthYear = storage.getExpenseAllMonthYear(i, Integer.parseInt(year));
             if(sumMontExpenseFalse != expenseAllMonthYear ){
                 flag ++;
                 if(flag == 1){
